@@ -1,0 +1,17 @@
+// vim:set sts=4 sw=4 et:
+
+digraph G {
+    Origin -> LineIndex [ label = "*lindex*" ];
+    Origin -> ColumnValues [ label = "cut" ];
+
+    subgraph cluster_0 {
+        ColumnValues -> RawIndex;
+        LineIndex -> RawIndex [ label = "paste {ColumnValues} {LineIndex}" ];
+        RawIndex -> SortedIndex [ label = "sort" ];
+    }
+
+    SortedIndex -> QueryResult [ label = "look -b" ];
+    QueryResult -> ResultIndexes [ label = "cut" ];
+    ResultIndexes -> ResultLines [ label = "*linget* {Origin} {ResultIndexes}" ];
+    Origin -> ResultLines;
+}
