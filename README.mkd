@@ -1,0 +1,11 @@
+# Line Indexer and getter by index.
+
+## Compile
+
+    $ make
+
+generates **lindex** as indexer and **linget** as getter.
+
+    $ make clean
+
+clean up working directory.
