@@ -35,7 +35,7 @@ static int index_line2(FILE *infile, FILE *outfile)
     }
 }
 
-static int index_line(char *targetPath, char *indexPath)
+static int index_line(const char *targetPath, const char *indexPath)
 {
     FILE *infile = fopen(targetPath, "rb");
     FILE *outfile = fopen(indexPath, "wb");
