@@ -25,6 +25,7 @@ static int index_line2(FILE *infile, FILE *outfile)
                 }
                 else
                     return 1;
+
             case '\n':
                 fprintf(outfile, "%lld\n", off);
                 off = my_fgetpos(infile);
